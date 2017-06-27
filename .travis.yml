@@ -1,0 +1,52 @@
+language: objective-c
+osx_image: xcode8.3
+xcode_project: CI Test.xcodeproj
+xcode_scheme: CI Test
+xcode_sdk: iphonesimulator10.3
+env:
+  global:
+  - APP_NAME="CI Test"
+  - 'DEVELOPER_NAME="iPhone Distribution: Alex Louey (5B4P3HE559)"'
+  - PROFILE_NAME="IOS_CI_Test_Ad_Hoc"
+  - FASTLANE_PASSWORD="Appscore1"
+  - secure: ANmiBxkQDO7RPS3KMY6PBXRB+0ANC5waum7Z+f2HaBmPtsiJBmJRkaIg4z5Wrzz6a5Fc7wLGr5AcmdjEYFFHLVd9Rhx53peVuypnqZuWMRgYY8qr6sSJFICoNMmO973TmgRDRe3hsC/5ayLOpXtX/jbKvlBoiUNWmN9QIWbFsSKeRvyP7LP0gjb7shhyZ8HfbdFrjRQXkpieVO1LALo7QdLz02hD7zRiLc9uBhgfBovqUF/3CSnW1npMS+lHj4/iy25dGM99ZESDhSPyU/BkJTDwqiErILSGujO2hsCjmx+r4nWJx6Q2Opx/VufbXt8zkRoKwe72ZcyGkRiIYdORLRq7nBPcRyrOcNwThUF7D7ESmSrs8eTFP2BND/LUNmNwq/X9RPsvfT3Fpa3+oK8VzX+nsuNtSdFn7baXjzji42icToNhIkfB29NE/cCWY9sSDGHrz/fpqVSrmqh7GVke6dt5ZbMyjLu5pmcb+8ppM1LQOUo2RWlRK18Woh8CC4SIA7NsbhM4xlcUb8Etn3Q/2W+YbXWQ072PIrC6ea3+NoGuRGRvqC5mFWoiALYX9UbZ+Vo8Z29NzA92ZhCfeNmZgyEcTPwO9I30Znj8lfaOi67v8EduallcJwK+Xne4yM8Qv1FaPjPDoSqH3qWCEunygAqMK8B+8/XTAatMFHFEpws=
+  - secure: DTgYSJ2F0dKkkYibUfRbcdxuj7FPrPpHQ3vlVmJBPR2yBDkf6sJdmG3ZfmToNNJoBcigrY6ksWAPLJQTNzzGJM3Xa7DHkc7WOpnmesCwFA4bmzg9Lesa5Kw/iRontWrpBkTfFuMuBIf0XyRm/usg/rVWAlvr+LAwOlMsbJ/3oXNVdVrosWaqVKXPE208E9Te0kkqpHi75HsRWi8u/oY4eDoPDy4pt0GkE5gvuop5WaW32ch9Y7+GDahV5lXmgR7reLz3OfTmXhefWmRu0fT5caDzS0evG7ogsXMT2h87DBJ2rxOA0/jjzm+UPYUH1RkVaf7KSkwZC7uk3Yh/mys8ADBxUiBRBUsWfChuvEcKGeNp1R6ZLiK31/Fsr9oMFozi3OdhpnNx5eIolyizZ/pYbHwcJ2qS9Iq+3atRJanHkeDUbTcjsvd7vAZPWEH7hXy7v5ZDwi4NOH8VD0ePh8BKko+rcuAL9L9AgX2eF406/Ur+JuogCKdBw0ca/4rOuanXupQStG90aak0Ou6/P1gJ8WrfYpfjMk6o4Ee0g0cdIua+qgNsO71la5VvojzXSaxyj9BdFTaJ2DHvfS+oct6yl9LcbJ8HYReTyf/5m0PM565xOwJBgZLH8XeLvZcJPOcBQmESbxAo99eSNn9jxM8XNfWptEtooaV7+Bc6lEDmiUU=
+  - secure: XvGe2h7d9mxNC/kXkKQGbA+MFlce/kjkbmN/tVivjOxO2L+GIK3NusZzpPPOv9qwa+JR5rdjmlaniMT6sjilyMWsMndh/IVeT0LpodX6f+JiIHUzZpGJjTRJUSdEk+IVPsWrmXUuOEoquvmA3KYciqfu7nv15qP65Wi1ijgfBdUDQHv2sQ+HdmbngnrLj5saAL+mwmL1NwpGftD65nBT0eqlizY4CiweVvNZWUJKswiYnGt9DK1aRN9SYrZVurQXLQW4aidOsAU1ob7sJTZuOaufdcBjc2fW3EmYjd5fLsQ+zUYFLIYYCQ3EcOipy9AY4NTPbMW+yxEZijRfhEt4DE6kc37W7uP6N3sSwFlWPiBycMs650mvsRcdkqz4REgWmMmX9GqKwGcufa0iZ7A1LmvkJ59RbmH//J4C2NQIr7hE2FTmm3Yrgji8uiGk4yQdR+UpCDQP1lxUGR9Hd9BHODvGPDgKLFTprGb23xmjeJ4fpRRSWpOE5tl1DGF+NV+YWNApw/9K7Qcg40KdNySdfZRiJnfhH6GXwEIRLDj+plwzZriFLSiXQKpy4TSAQBZhzq6+QqZrdSj/p+w5OoUDYyxlAol38zMSNN8HpiulrYVu2tYSEY3r7U4Bt24s1oBaM/i1tLXhJ0orwKbeB45SKQ4kNC+TWH2iVT+ueLFJ+Ak=
+  - secure: fz1FUBxX2X151I+fhDzF6oWgFnh/AznkxB7koEI6wUHETggOkfJj/ADUEkxMv8c6b3uOG394J4yFOAn+O2hXXEe2TqsVV5VeYajxk2ovEHExlAY5xwn7J+yWibqvHWOhdi6a9N7P0YhIUa+1eU1Uy45fKPAj0ldZ//ESDFR4d8lORv2r+5mO8sCETjxbId+OXKPHiETvjCmJ9u26OlNonz3yCE+E1E0MRk1/DE2DYDL/0foGZ01hr5wctpv20uBlDixBQf1vtJvgP6LPZpX9teB4ufAq5SW8UKTFr4QU0aS6iZBznnMuCRl+SGt9feVk/62ZW8vnaY5C8KSwS+CDPC3lHPKwMz9iy5uB2ZCvwSIjih13eT3kN68zhkJTEtGoIXrF2HRjU6kVVwoLQJNZW/tn6lrzMmgvtd5qkOp6rUhmO5EMT2NW9vd9LVi3hkuuou8xjsGwgjIYoJiKKYhxzZWQZdom7rQ5m7nI1AGrg3WlEJXawaFIefwwZVKLvK1lvkGGs3BkHj15oLmgiOIYsNNFHEB7FGIlMzpKQRmF6xsHiRTGvwY4y6VwtRVWfO52x67wqsX2K7NLxgtOmJ4QvD1/SBl0l4SScaM0hy+5su04pvy7/SFW4CJ/+1TYZ2oLiLRUTOeDc/sns5hh+JWtNwtRWrPw9vZHm8SWASYjryk=
+
+notifications:
+  slack: appscore:oZxNUi5C6n0T6Bo5NmyRrQ9w
+  email:
+    recipients:
+    - po-wei.tsai@appscore.com.au
+    - mark.fulton@appscore.com.au
+
+before_install:
+- sudo gem update fastlane --no-ri --no-rdoc --no-document
+
+before_script:
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/IOS_CI_Test_Ad_Hoc.mobileprovision.enc
+  -d -a -out scripts/profile/IOS_CI_Test_Ad_Hoc.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.cer.enc -d -a
+  -out scripts/certs/dist.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a
+  -out scripts/certs/dist.p12
+- ./scripts/add-key.sh
+- ./scripts/update-bundle.sh
+
+script:
+#- gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+#- rvm get stable
+#- rvm cleanup all
+#- set -o pipefail && xcodebuild test -project "CI Test.xcodeproj" -scheme "CI Test" -sdk iphonesimulator10.3 -destination 'name=iPhone 7,OS=10.3.1' ONLY_ACTIVE_ARCH=NO | xcpretty
+- ./scripts/sign-and-upload.sh
+#  Simulator,name=iPhone 7 Plus,OS=10.3.1' -sdk iphonesimulator10.3 ONLY_ACTIVE_ARCH=NO
+#- xcodebuild -project "CI Test.xcodeproj" -sdk iphoneos -configuration Release OBJROOT=$PWD/build
+#  SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO
+#  
+#- xcodebuild -project "CI Test.xcodeproj -scheme "CI Test" archive -archivePath "CI Test.xcarchive
+#- xcodebuild -exportArchive -exportOptionsPlist "CI Test/exportOptions.plist" -archivePath "CI Test.xcarchive" -exportPath "CI Test"
+#- xcodebuild -alltargets -configuration Release -scheme "CI Test" -archivePath "${APP_PATH}/${PROJECT}.xcarchive" archive
+#- xcodebuild -exportProvisioningProfile "${PROVISIONING_PROFILE_NAME}" -exportArchive -exportFormat IPA -archivePath "${APP_PATH}/${PROJECT}.xcarchive" -exportPath "${IPA_DIR}/${PROJECT}.ipa" CODE_SIGN_IDENTITY="${SIGNING_IDENTITY}"
+after_script:
+ - ./scripts/remove-key.sh

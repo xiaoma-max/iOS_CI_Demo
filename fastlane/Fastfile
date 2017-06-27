@@ -1,0 +1,80 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.31.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  desc "Submit a new Beta Build to Apple Fabric"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do |values|
+    gym(scheme: "CI Test", export_method: 'ad-hoc') # Build your app - more options available
+    emails = values[:test_email] ? values[:test_email] : ['xiaoma_max@hotmail.com'] # You can list more emails here
+    groups = values[:test_email] ? nil : nil # You can define groups on the web and reference them here
+    crashlytics(api_token: '2061da790245376da9edaafacd12b5492bc9ddae',
+             build_secret: '229dc30353109ed887301fadcd978fda7f1339a83a4837e71142b2fb3509884d',
+         crashlytics_path: 'Crashlytics.framework',
+                   emails: emails,
+                   groups: groups,
+                    notes: 'Distributed with fastlane', # Check out the changelog_from_git_commits action
+            notifications: true) # Should this distribution notify your testers via email?
+
+  end
+
+  desc "Deploy a new version to the App Store"
+  lane :release do
+    # match(type: "app-store")
+    # snapshot
+    increment_build_number
+    sigh
+    gym(scheme: "CI Test”, export_method: “app-store”) # Build your app - more options available
+    deliver(force: true)
+    # frameit
+
+ 
+  end
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    # slack(
+    #   message: exception.message,
+    #   success: false
+    # )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used. No personal data is recorded. 
+# Learn more at https://github.com/fastlane/fastlane#metrics
