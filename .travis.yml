@@ -40,13 +40,5 @@ script:
 #- rvm cleanup all
 #- set -o pipefail && xcodebuild test -project "CI Test.xcodeproj" -scheme "CI Test" -sdk iphonesimulator10.3 -destination 'name=iPhone 7,OS=10.3.1' ONLY_ACTIVE_ARCH=NO | xcpretty
 - ./scripts/sign-and-upload.sh
-#  Simulator,name=iPhone 7 Plus,OS=10.3.1' -sdk iphonesimulator10.3 ONLY_ACTIVE_ARCH=NO
-#- xcodebuild -project "CI Test.xcodeproj" -sdk iphoneos -configuration Release OBJROOT=$PWD/build
-#  SYMROOT=$PWD/build ONLY_ACTIVE_ARCH=NO
-#  
-#- xcodebuild -project "CI Test.xcodeproj -scheme "CI Test" archive -archivePath "CI Test.xcarchive
-#- xcodebuild -exportArchive -exportOptionsPlist "CI Test/exportOptions.plist" -archivePath "CI Test.xcarchive" -exportPath "CI Test"
-#- xcodebuild -alltargets -configuration Release -scheme "CI Test" -archivePath "${APP_PATH}/${PROJECT}.xcarchive" archive
-#- xcodebuild -exportProvisioningProfile "${PROVISIONING_PROFILE_NAME}" -exportArchive -exportFormat IPA -archivePath "${APP_PATH}/${PROJECT}.xcarchive" -exportPath "${IPA_DIR}/${PROJECT}.ipa" CODE_SIGN_IDENTITY="${SIGNING_IDENTITY}"
 after_script:
  - ./scripts/remove-key.sh
