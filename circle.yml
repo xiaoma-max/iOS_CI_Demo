@@ -1,4 +1,6 @@
 machine:
+  xcode:
+    version: 8.3
   environment:
     XCODE_SCHEME: CI Test
 #    XCODE_WORKSPACE: ***.xcworkspace
