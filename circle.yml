@@ -3,7 +3,7 @@ machine:
     version: 8.3
   environment:
     XCODE_SCHEME: CI Test
-#    XCODE_WORKSPACE: ***.xcworkspace
+    XCODE_WORKSPACE: CI Test.xcworkspace
     GYM_CODE_SIGNING_IDENTITY: 'iPhone Distribution: Alex Louey (5B4P3HE559)'
     FASTLANE_PASSWORD: Appscore1
 dependencies:

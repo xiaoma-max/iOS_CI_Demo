@@ -6,7 +6,7 @@ This project is to test continuous integration (CI) in Ios based on several serv
 
  - Self testing (unit test, functional test via simulator)
  - Notification (Slack notification for the test result in particular channel)
- - Deploy base on branches (development branch to Fabric, master branch to itunes connect)
+ - Deploy base on branches (beta branch to Fabric, master branch to itunes connect)
  
 Currently we focus on cloud solution providers, and following are the achievable services:
 
