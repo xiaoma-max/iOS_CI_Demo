@@ -8,7 +8,7 @@ machine:
     FASTLANE_PASSWORD: Appscore1
 dependencies:
     pre:
-      - sudo gem update fastlane
+      - sudo gem install fastlane
 #  cache_directories:
 #    - 'vendor/bundle'
 #    - 'Pods'
@@ -21,8 +21,8 @@ deployment:
   test:
     branch: development
     commands:
-      - fastlane test
-  test:
+      - fastlane ios test
+  beta:
     branch: beta
     commands:
       - fastlane ios beta
