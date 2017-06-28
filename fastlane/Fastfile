@@ -45,7 +45,6 @@ platform :ios do
   lane :release do
     # match(type: "app-store")
     # snapshot
-    increment_build_number
     sigh
     gym(scheme: "CI Test”, export_method: “app-store”) # Build your app - more options available
     deliver(force: true)
