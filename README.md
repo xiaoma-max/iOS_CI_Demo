@@ -18,7 +18,7 @@ Currently we focus on cloud solution providers, and following are the achievable
 
 Generally speaking, these services are all followed the procedures below:
 
- - Set up virtual machine base environment (Ruby with Android studion installed)
+ - Set up virtual machine base environment
  - Download/update the required SDK platforms, SDK tools, etc.
  - Set up the simulator and wait until its running
  - Running tests based on our code
