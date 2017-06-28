@@ -19,7 +19,7 @@ dependencies:
 #        timeout: 300
 deployment:
   beta:
-    branch: development
+    branch: beta
     commands:
       - fastlane ios beta
   release:
