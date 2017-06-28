@@ -1,0 +1,30 @@
+machine:
+  environment:
+    XCODE_SCHEME: CI Test
+#    XCODE_WORKSPACE: ***.xcworkspace
+    GYM_CODE_SIGNING_IDENTITY: 'iPhone Distribution: Alex Louey (5B4P3HE559)'
+    FASTLANE_PASSWORD: Appscore1
+dependencies:
+    pre:
+      - sudo gem update fastlane
+#  cache_directories:
+#    - 'vendor/bundle'
+#    - 'Pods'
+#    - '~/.cocoapods'
+#  override:
+#    - bundle install -j4 --path=vendor/bundle
+#    - pod install:
+#        timeout: 300
+deployment:
+  test:
+    branch: development
+    commands:
+      - fastlane test
+  test:
+    branch: beta
+    commands:
+      - fastlane ios beta
+  release:
+    branch: master
+    commands:
+      - fastlane ios beta
