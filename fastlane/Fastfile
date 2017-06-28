@@ -28,7 +28,7 @@ platform :ios do
   desc "Submit a new Beta Build to Apple Fabric"
   desc "This will also make sure the profile is up to date"
   lane :beta do |values|
-    gym(scheme: "CI Test", export_method: 'ad-hoc',configuration:'Beta') # Build your app - more options available
+    gym(scheme: "CI Test", export_method: 'ad-hoc, clean: true',configuration:'Beta') # Build your app - more options available
     emails = values[:test_email] ? values[:test_email] : ['xiaoma_max@hotmail.com'] # You can list more emails here
     groups = values[:test_email] ? nil : nil # You can define groups on the web and reference them here
     crashlytics(api_token: '2061da790245376da9edaafacd12b5492bc9ddae',
@@ -46,7 +46,7 @@ platform :ios do
     # match(type: "app-store")
     # snapshot
     sigh
-    gym(scheme: "CI Test", export_method: "app-store", configuration:"Release") # Build your app - more options available
+    gym(scheme: "CI Test", export_method: "app-store", clean: true, configuration:"Release") # Build your app - more options available
     deliver(force: true)
     # frameit
 
