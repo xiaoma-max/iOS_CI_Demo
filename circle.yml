@@ -18,15 +18,11 @@ dependencies:
 #    - pod install:
 #        timeout: 300
 deployment:
-  test:
-    branch: development
-    commands:
-      - fastlane ios test
   beta:
-    branch: beta
+    branch: development
     commands:
       - fastlane ios beta
   release:
     branch: master
     commands:
-      - fastlane ios beta
+      - fastlane ios release
