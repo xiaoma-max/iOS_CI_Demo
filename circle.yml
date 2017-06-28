@@ -25,4 +25,4 @@ deployment:
   release:
     branch: master
     commands:
-      - fastlane ios release
+      - fastlane ios beta
