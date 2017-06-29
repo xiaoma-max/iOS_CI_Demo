@@ -16,9 +16,6 @@ fastlane_version "2.31.0"
 default_platform :ios
 
 platform :ios do
-  before_all do
-     ENV["SLACK_URL"] = "https://hooks.slack.com/services/appscore:oZxNUi5C6n0T6Bo5NmyRrQ9w"
-  end
 
   desc "Runs all the tests"
   lane :test do
@@ -53,20 +50,6 @@ platform :ios do
 
   # You can define as many lanes as you want
 
-  after_all do |lane|
-    # This block is called, only if the executed lane was successful
-
-     slack(
-       message: "Successfully deployed new App Update."
-     )
-  end
-
-  error do |lane, exception|
-    slack(
-      message: exception.message,
-      success: false
-    )
-  end
 end
 
 
