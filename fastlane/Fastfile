@@ -45,12 +45,10 @@ platform :ios do
   lane :release do
     # match(type: "app-store")
     # snapshot
-    sigh(filename: “./script/profile/CITestDistribution.mobileprovision")
+    sigh
     gym(scheme: "CI Test", export_method: "app-store") # Build your app - more options available
     deliver(force: true)
-    # frameit
-
- 
+    # frameit 
   end
 
   # You can define as many lanes as you want
