@@ -46,7 +46,7 @@ platform :ios do
     # match(type: "app-store")
     # snapshot
     sigh
-    gym(scheme: "CI Test", export_method: "app-store", clean: true, configuration:"Release") # Build your app - more options available
+    gym(scheme: "CI Test", export_method: "app-store") # Build your app - more options available
     deliver(force: true)
     # frameit
 
